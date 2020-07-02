@@ -11,13 +11,13 @@ function index(req, res) {
             console.log("Insert Error>>" + err);
             fs.readFile('./public/index.html', 'utf8', function (error, data) {
                 res.send(ejs.render(data, {
-                    letter_count = 'ERROR'
+                    letter_count : '0'
                 }));
             });
         } else {
             fs.readFile('./public/index.html', 'utf8', function (error, data) {
                 res.send(ejs.render(data, {
-                    letter_count = rows[0].cnt
+                    letter_count : rows[0].cnt
                 }));
             });
         }
