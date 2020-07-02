@@ -206,3 +206,32 @@ input::placeholder{
     padding-top: 40px;
     text-align: center;
 }
+
+#p_ans_msg{
+    color: yellow;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+#div_share, #div_about{
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background: #9759E4;
+    border-radius: 15px;
+}
+
+.p-about{
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#a_portpolio{
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-bottom: 2px solid white;
+    text-decoration: none;
+}

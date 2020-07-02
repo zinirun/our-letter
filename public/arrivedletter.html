@@ -12,18 +12,22 @@
 <body>
     <div class="div-view">
         <div class="div-main-box">
+          <form method="post" action="/get/question/">
+           <input type="hidden" name="url_id" value="<%=url_id%>">
+           <input type="hidden" name="q_num" value="1">
             <div class="div-title" style="padding-top: 40px;">
-                ____의 편지가 도착했어요!
+                <%=from%>님의 편지가 도착했어요!
             </div>
             <div class="div-make-box" style="padding-top: 50px;">
                <p class="p-arrived-info">
-                   상대가 만든 0개 질문을 맞히면,
+                   상대가 만든 <%=q_cnt%>개 질문을 맞히면,
                </p>
                <p class="p-arrived-info" style="padding-bottom: 30px;">
                    편지를 읽을 수 있어요.
                </p>
-                <input class="input-make-bt" type="button" value="시작하기">
+                <input class="input-make-bt" type="submit" value="시작하기">
             </div>
+            </form>
         </div>
     </div>
 </body></html>

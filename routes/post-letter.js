@@ -6,11 +6,13 @@ const ejs = require('ejs'),
 
 const mySqlClient = mysql.createConnection(require('../config/db_config'));
 
-const postLetter = async function (req, res) {
+async function postLetter(req, res) {
+    console.log(req.body.url_id);
+    
     let from = req.body.from,
         to = req.body.to,
         url_id = req.body.url_id,
-        q_cnt = parseInt(req.body.q_cnt),
+        q_cnt = req.body.q_cnt,
         content = req.body.content;
     
     let q1 = req.body.q1,
@@ -28,8 +30,7 @@ const postLetter = async function (req, res) {
         url_id: url_id,
         from: from,
         to: to,
-        q_cnt: q_cnt,
-        content: content,
+        q_cnt: parseInt(q_cnt),
         q1: q1,
         q1_a: q1_a,
         q2: q2,
@@ -39,7 +40,8 @@ const postLetter = async function (req, res) {
         q4: q4,
         q4_a: q4_a,
         q5: q5,
-        q5_a: q5_a
+        q5_a: q5_a,
+        content: content
     }
 
     const insertLetterSql = 'INSERT INTO letter SET ?;';
@@ -55,3 +57,5 @@ const postLetter = async function (req, res) {
         }
     });
 }
+
+module.exports = postLetter;

@@ -12,19 +12,24 @@
 <body>
     <div class="div-view">
         <div class="div-main-box">
+           
             <div class="div-title" style="padding-top: 40px;">
-                _개 중 첫번째 질문,
+                <%=q_cnt%>개 중 <%=q_num_kor%> 질문,
             </div>
             <div class="div-make-box" style="padding-top: 50px;">
-                <form>
+                <form method="post" action="/solve/question/">
+                 <input type="hidden" name="q_cnt" value="<%=q_cnt%>">
+                  <input type="hidden" name="q_num" value="<%=q_num%>">
+                   <input type="hidden" name="url_id" value="<%=url_id%>">
                     <div class="div-question-form" style="margin-bottom: 30px;">
                         <div class="div-q-upper">
-                            <input class="input-q-question" maxlength="25" readonly></div>
+                            <input name="origin_question" class="input-q-question" maxlength="25" value="<%=question%>" readonly></div>
                         <hr class="hr-q-line">
                         <div class="div-q-lower">
-                            <input class="input-q-answer" placeholder="여기에 정답을 입력하세요!" maxlength="25"></div>
+                            <input name="answer" class="input-q-answer" placeholder="여기에 정답을 입력하세요!" maxlength="25"></div>
                     </div>
-                    <input class="input-make-bt" type="button" value="다음으로">
+                    <p id="p_ans_msg"><% if(locals.msg){ %> <%=locals.msg%><% } %></p>
+                    <input class="input-make-bt" type="submit" value="다음으로">
                 </form>
             </div>
         </div>

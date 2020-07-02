@@ -12,12 +12,17 @@ function addEvent_addQuestion() {
             } else {
                 target = document.getElementById('div_add_target');
 
-                innerCode = '<div class="div-question-form"><div class="div-q-upper"><input name="q'+ (current_q_cnt+1) +' class="input-q-question" placeholder="' + q_cnt_kor[current_q_cnt] + ' 질문' + '" maxlength="25" required></div><hr class="hr-q-line><div class="div-q-lower"><input name="q'+ (current_q_cnt+1) +'_a" class="input-q-answer" placeholder="질문의 답" maxlength="25" required></div></div>';
-                
-                document.getElementById('input_q_cnt').value = (current_q_cnt+1);
-                
-                current_q_cnt++;
+                innerCode = '<div class="div-question-form"><div class="div-q-upper"><input name="q' + (current_q_cnt + 1) + '" class="input-q-question" placeholder="' + q_cnt_kor[current_q_cnt] + ' 질문' + '" maxlength="25" required></div><hr class="hr-q-line><div class="div-q-lower"><input name="q' + (current_q_cnt + 1) + '_a" class="input-q-answer" placeholder="질문의 답" maxlength="25" required></div></div>';
 
+                document.getElementById('input_q_cnt').value = (current_q_cnt + 1);
+
+                //이전 질문, 정답 유지
+                for (var i = 1; i <= current_q_cnt; i++) {
+                    document.getElementsByName('q' + i)[0].setAttribute("value", document.getElementsByName('q' + i)[0].value);
+                    document.getElementsByName('q' + i + '_a')[0].setAttribute("value", document.getElementsByName('q' + i + '_a')[0].value);
+                }
+
+                current_q_cnt++;
                 target.innerHTML += innerCode;
             }
         });
