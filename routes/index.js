@@ -1,5 +1,8 @@
 const ejs = require('ejs'),
-    fs = require('fs');
+    fs = require('fs'),
+    mysql = require('mysql'),
+    cors = require('cors');
+
 const mySqlClient = mysql.createConnection(require('../config/db_config'));
 
 function index(req, res) {
