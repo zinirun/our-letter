@@ -7,44 +7,53 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="/public/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/public/script/make-letter.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body onload="addEvent_addQuestion()">
     <div class="div-view">
         <div class="div-main-box">
             <div class="div-title">
                 우편 만들기
             </div>
-            <form>
-            <div class="div-letter-make-box">
-                <div class="div-make-who">
-                    <input class="input-who" maxlength="10">(이)가, <input class="input-who" maxlength="10">에게 
-                </div>
-                <div class="div-make-question">
-                    <input type="button" id="input_q_add" value="질문 추가하기">
-                    <!-- 질문 박스 추가 위치-->
-                    <div class="div-question-form">
-                       <div class="div-q-upper">
-                        <input class="input-q-question" placeholder="첫번째 질문" maxlength="25"></div><hr class="hr-q-line">
-                        <div class="div-q-lower">
-                        <input class="input-q-answer" placeholder="질문의 답" maxlength="25"></div>
+            <form action="/post/letter" method="POST">
+                <div class="div-letter-make-box">
+                    <div class="div-make-who">
+                        <input id="input_url_id" name="url_id" disabled hidden>
+                        <input id="input_q_cnt" name="q_cnt" value="1" disabled hidden>
+                        <input name="from" class="input-who" maxlength="10" required>(이)가, <input name="to" class="input-who" maxlength="10" required>에게
+                    </div>
+                    <div class="div-make-question">
+                        <input type="button" id="input_q_add" value="질문 추가하기">
+                        <div class="p-info" style="padding-top:5px;">최대 5개까지 만들 수 있어요.</div>
+                        <div id="div_add_target">
+                            <div class="div-question-form">
+                                <div class="div-q-upper">
+                                    <input name="q1" class="input-q-question" placeholder="첫번째 질문" maxlength="25" required></div>
+                                <hr class="hr-q-line">
+                                <div class="div-q-lower">
+                                    <input name="q1_a" class="input-q-answer" placeholder="질문의 답" maxlength="25" required></div>
+                            </div>
+                        </div>
+                        <!-- 질문 박스 추가 위치-->
+                    </div>
+
+                    <div class="div-write-letter-box">
+                        <div class="p-info">이제 편지를 쓰세요!</div>
+                        <textarea name="content" id="textarea-letter" maxlength="1000" required></textarea>
                     </div>
                 </div>
-                
-                <div class="div-write-letter-box">
-                    <div class="p-info">이제 편지를 쓰세요!</div>
-                    <textarea id="textarea-letter"></textarea>
+
+                <div class="div-info-box">
+                    <p class="p-info">상대의 정답에 글자가 포함되면 정답 처리됩니다.</p>
+                    <p class="p-info">상대가 못 맞출까 너무 걱정하지 마세요!</p>
                 </div>
-            </div>
-            
-            <div class="div-info-box">
-                <p class="p-info">상대의 정답에 글자가 포함되면 정답 처리됩니다.</p>
-                <p class="p-info">상대가 못 맞출까 너무 걱정하지 마세요!</p>
-            </div>
-            <div class="div-make-box">
-                <input class="input-make-bt" type="submit" value="나의 우편 만들기">
-            </div>
+                <div class="div-make-box">
+                    <input class="input-make-bt" type="submit" value="나의 우편 만들기">
+                </div>
             </form>
         </div>
     </div>
-</body></html>
+</body>
+
+</html>

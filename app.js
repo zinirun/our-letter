@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
-var http = require('http').createServer(app);
-var path = require('path'),
+const express = require('express');
+const app = express();
+const http = require('http').createServer(app);
+let path = require('path'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     static = require('serve-static'),
@@ -28,17 +28,21 @@ app.use(expressSession({
 }));
 app.use(cors());
 
-var router = express.Router();
+const router = express.Router();
 
 //메인 페이지 라우터
-var index = require('./routes/index.js');
+const index = require('./routes/index.js');
 router.route('/').get(index);
+
+//우편 만들기 라우터
+const makeletter = require('./routes/make-letter.js');
+router.route('/make/letter').get(makeletter);
 
 
 app.use('/', router);
 
 // 404 에러 페이지 처리
-var errorHandler = expressErrorHandler({
+errorHandler = expressErrorHandler({
     static: {
         '404': './public/404.html'
     }
