@@ -9,7 +9,7 @@ function index(req, res) {
 
     const countLetterSql = 'select count(*) as cnt from letter;';
 
-    mySqlClient.query(countLetterSql, params, function (err) {
+    mySqlClient.query(countLetterSql, function (err) {
         if (err) {
             console.log("Insert Error>>" + err);
             fs.readFile('./public/index.html', 'utf8', function (error, data) {
