@@ -1,8 +1,6 @@
--- ourletter_db 데이터베이스 구조 내보내기
-CREATE DATABASE IF NOT EXISTS `ourletter_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `ourletter_db`;
 USE `ourletter_db`;
 
--- 테이블 ourletter_db.letter 구조 내보내기
 CREATE TABLE IF NOT EXISTS `letter` (
   `id` int NOT NULL AUTO_INCREMENT,
   `url_id` varchar(12) NOT NULL,
@@ -21,4 +19,4 @@ CREATE TABLE IF NOT EXISTS `letter` (
   `q5_a` varchar(25) DEFAULT NULL,
   `content` varchar(1010) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=UTF8;
