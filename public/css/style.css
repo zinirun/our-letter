@@ -1,0 +1,207 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+*{
+    cursor: default;
+}
+
+span, p, table, hr, input[type="button"], ul{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #AC7EE5;
+    color: white;
+}
+
+input, textarea {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    font-family: 'Noto Sans KR';
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+.div-view {
+    width: 320px;
+    margin: 30px auto;
+}
+
+.div-title {
+    padding-top: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.div-make-box{
+    padding-top: 30px;
+    text-align: center;
+}
+
+.input-make-bt{
+    font-size: 19px;
+    font-weight: 600;
+    color: white;
+    padding: 8px 30px;
+    background: inherit;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.div-info-box{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: #F3DCFF;
+    font-weight: 500;
+}
+
+.p-info{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #F3DCFF;
+}
+
+.div-bottom-box{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.input-small-bt{
+    margin: 0 5px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 3px 7px;
+    color: white;
+    background: inherit;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+.div-letter-make-box{
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+
+.input-who{
+    width: 70px;
+    font-size: 16px;
+    font-weight: 500;
+    background: inherit;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+.div-make-question{
+    padding-top: 20px;
+}
+
+#input_q_add{
+    border: none;
+    padding: 4px 10px;
+    background: inherit;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.div-question-form{
+    margin-top: 15px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background: inherit;
+}
+
+.div-q-upper{
+    
+}
+
+.div-q-lower{
+    margin-top: 0;
+}
+
+.hr-q-line{
+    border: 1px solid white;
+}
+
+.input-q-question, .input-q-answer{
+    width: 90%;
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    background: inherit;
+    color: white;
+}
+
+input::placeholder{
+    color: white;
+}
+
+.div-write-letter-box{
+    padding-top: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+#textarea-letter{
+    margin-top: 10px;
+    width: 90%;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: inherit;
+    height: 200px;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.div-url-box{
+    padding-top: 45px;
+    text-align: center;
+}
+
+#input_url{
+    width: 80%;
+    background: #F3DCFF;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.p-arrived-info{
+    margin: 3px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.div-view-letter-who{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.div-finish-box{
+    padding-top: 40px;
+    text-align: center;
+}
