@@ -3,5 +3,5 @@ FROM mysql:5.7
 LABEL zinirun <github.com/zinirun>
 # database = test and password for root = password
 ENV MYSQL_DATABASE=ourletter_db \
-    MYSQL_ROOT_PASSWORD=sw32164959@
+    MYSQL_ROOT_PASSWORD=
 COPY ./makedb.sql /docker-entrypoint-initdb.d/
